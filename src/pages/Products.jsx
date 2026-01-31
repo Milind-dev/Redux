@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "./actions/product.actions";
+import { fetchProducts } from "../actions/product.actions";
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -14,13 +14,14 @@ const Products = () => {
   if (error) return <h3>{error}</h3>;
 
   return (
-    <>
+    <div>
+      <h2>Products</h2>
       {list.map((p) => (
         <div key={p.id}>
           <strong>{p.title}</strong>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
